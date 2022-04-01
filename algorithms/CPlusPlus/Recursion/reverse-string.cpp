@@ -31,14 +31,26 @@ string rev(string s, int start, int end)
     return rev(s, start + 1, end - 1);
 }
 
+// function that uses while loop to reverse a string
+string revStr(string s){
+    int i = 0, j = s.length()-1;
+    
+    while (i < j){
+        swap(s[i], s[j]);    
+        i++; j--;
+    }
+    return s;
+}
+
 //main starts
 int main()
 {
     // Write C++ code here
     string s = "hello";
-    int len = s.size();
+    int len = s.length();
     cout << endl;
-    cout << rev(s, 0, len - 1);
+    cout << rev(s, 0, len - 1) << endl;
+    cout << revStr(s) << endl;
     return 0;
 }
 
